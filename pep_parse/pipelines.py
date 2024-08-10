@@ -3,13 +3,8 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 import csv
-import os
 from collections import defaultdict
 from datetime import datetime as dt
-from pathlib import Path
-
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 
 from pep_parse.settings import BASE_DIR, RESULTS_DIR
 
@@ -26,8 +21,8 @@ class PepParsePipeline:
 
     def close_spider(self, spider):
         with open(
-            self.result_dir
-            / f'status_summary_{dt.now().strftime("%d-%m-%Y_%H:%M:%S")}.csv',
+            self.result_dir / f'status_summary_'
+                              f'{dt.now().strftime("%d-%m-%Y_%H:%M:%S")}.csv',
             'w',
             encoding='utf-8',
         ) as f:

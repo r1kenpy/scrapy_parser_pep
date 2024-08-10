@@ -17,16 +17,15 @@ SPIDER_MODULES = ['pep_parse.spiders']
 NEWSPIDER_MODULE = 'pep_parse.spiders'
 
 
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
+# Crawl responsibly by identifying yourself
+# (and your website) on the user-agent
 # USER_AGENT = 'pep_parse (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
 FEEDS = {
-    BASE_DIR
-    / RESULTS_DIR
-    / 'pep_%(time)s.csv': {
+    RESULTS_DIR + 'pep_%(time)s.csv': {
         'format': 'csv',
         'encoding': 'utf-8',
         'overwrite': True,
@@ -54,8 +53,9 @@ FEEDS = {
 
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
-#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-#   'Accept-Language': 'en',
+#     'Accept': ('text/html,application/xhtml+xml,'
+#                'application/xml;q=0.9,*/*;q=0.8'),
+#     'Accept-Language': 'en',
 # }
 
 # Enable or disable spider middlewares
@@ -96,7 +96,6 @@ ITEM_PIPELINES = {
 # AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 # HTTPCACHE_ENABLED = True
 # HTTPCACHE_EXPIRATION_SECS = 0
 # HTTPCACHE_DIR = 'httpcache'
