@@ -22,4 +22,8 @@ class PepSpider(scrapy.Spider):
             response.css('section[id^="pep-content"] h1::text').get(),
         ).groups()
 
-        yield PepParseItem(number=number, name=name, status=response.css('abbr::text').get())
+        yield PepParseItem(
+            number=number,
+            name=name,
+            status=response.css('abbr::text').get()
+        )

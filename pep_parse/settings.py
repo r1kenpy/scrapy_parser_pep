@@ -26,7 +26,7 @@ NEWSPIDER_MODULE = SPIDER_NAME_MODEL
 ROBOTSTXT_OBEY = True
 
 FEEDS = {
-      f'{RESULTS_DIR}pep_%(time)s.csv': {
+    f'{RESULTS_DIR}pep_%(time)s.csv': {
         'format': 'csv',
         'encoding': 'utf-8',
         'overwrite': True,
