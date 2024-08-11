@@ -1,9 +1,9 @@
 status,quantity
 Active,33
+Superseded,23
+Withdrawn,61
 Final,315
 Deferred,36
-Withdrawn,61
-Superseded,23
 Rejected,124
 Accepted,22
 Draft,33

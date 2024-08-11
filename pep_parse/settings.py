@@ -9,12 +9,13 @@
 from pathlib import Path
 
 BOT_NAME = 'pep_parse'
+SPIDER_NAME_MODEL = 'pep_parse.spiders'
 
 BASE_DIR = Path(__file__).parent.parent
 RESULTS_DIR = 'results/'
 
-SPIDER_MODULES = ['pep_parse.spiders']
-NEWSPIDER_MODULE = 'pep_parse.spiders'
+SPIDER_MODULES = [SPIDER_NAME_MODEL]
+NEWSPIDER_MODULE = SPIDER_NAME_MODEL
 
 
 # Crawl responsibly by identifying yourself
@@ -25,7 +26,7 @@ NEWSPIDER_MODULE = 'pep_parse.spiders'
 ROBOTSTXT_OBEY = True
 
 FEEDS = {
-    RESULTS_DIR + 'pep_%(time)s.csv': {
+      f'{RESULTS_DIR}pep_%(time)s.csv': {
         'format': 'csv',
         'encoding': 'utf-8',
         'overwrite': True,
